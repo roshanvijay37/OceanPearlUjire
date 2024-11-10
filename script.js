@@ -21,8 +21,4 @@ function initializeParallax(element) {
 document.addEventListener('DOMContentLoaded', () => {
     const parallaxElements = document.querySelectorAll('.parallax-section');
     parallaxElements.forEach(element => observer.observe(element));
-    
-    document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
 });

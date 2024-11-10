@@ -163,7 +163,8 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
-    z-index: 1;}
+    z-index: 1;
+}
 
 .map-content {
     position: relative;
@@ -235,6 +236,25 @@ body {
     color: #25D366;
 }
 
+.directions-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.directions-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -273,23 +293,4 @@ body {
     .hamburger {
         display: flex;
     }
-}
-
-.directions-btn {
-    margin-top: 20px;
-    padding: 15px 30px;
-    background: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.directions-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
