@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: 'Arial', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.hero-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.animate-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s forwards;
+    letter-spacing: 4px;
+}
+
+.animate-subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #fff;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s forwards 0.5s;
+    letter-spacing: 2px;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    z-index: 100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.parallax-section {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.3s ease-out;
+}
+
+.visible {
+    opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+    .hero-content {
+        padding: 0 40px;
+    }
+    
+    .whatsapp-btn {
+        font-size: 1.4rem;
+        padding: 20px 35px;
+    }
+}
+
+/* Add this to your existing CSS */
+.location-tagline {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: #fff;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s forwards 1s;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #e6e6e6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Add these styles to your existing CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #e6e6e6;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: 0.3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
