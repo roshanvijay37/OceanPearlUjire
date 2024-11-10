@@ -19,6 +19,16 @@ function initializeParallax(element) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Parallax initialization
     const parallaxElements = document.querySelectorAll('.parallax-section');
     parallaxElements.forEach(element => observer.observe(element));
+
+    // Menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    });
 });
