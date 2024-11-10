@@ -407,130 +407,221 @@ body {
 .menu-overlay.active .menu-item:nth-child(6) { transition-delay: 0.6s; }
 
 /* Base responsive styles */
-.hero-content {
-    width: 90%;
-    padding: 20px;
+:root {
+    --header-height: 80px;
 }
 
-/* Tablet and smaller screens */
-@media screen and (max-width: 768px) {
+/* Large Desktop (1400px and up) */
+@media screen and (min-width: 1400px) {
+    .hero-content, .map-content {
+      max-width: 1400px;
+      padding: 0 60px;
+    }
+  
     .animate-title {
-        font-size: 2.5rem;
+      font-size: 6rem;
     }
-    
+  
     .animate-subtitle {
-        font-size: 1.2rem;
+      font-size: 2.5rem;
     }
-    
-    .location-tagline {
-        font-size: 1rem;
-    }
-    
-    .menu-item {
-        font-size: 1.5rem;
-    }
-    
-    .whatsapp-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-    
-    .map-container {
-        padding: 50px 0;
-    }
-    
+  
     .mapouter {
-        height: 300px;
-    }
-    
-    .info-card {
-        width: 90%;
-        padding: 15px;
-        font-size: 0.9rem;
+      height: 600px;
     }
 }
 
-/* Mobile screens */
-@media screen and (max-width: 480px) {
+/* Desktop and Tablet Landscape (1024px to 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+    .hero-content {
+      width: 85%;
+      padding: 0 40px;
+    }
+  
     .animate-title {
-        font-size: 2rem;
+      font-size: 5rem;
     }
-    
+  
     .animate-subtitle {
-        font-size: 1rem;
+      font-size: 2.2rem;
     }
-    
+  
+    .mapouter {
+      height: 500px;
+    }
+}
+
+/* Tablet Portrait (768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .hero-content {
+      width: 90%;
+      padding: 0 30px;
+    }
+  
+    .animate-title {
+      font-size: 4rem;
+    }
+  
+    .animate-subtitle {
+      font-size: 1.8rem;
+    }
+  
     .location-tagline {
-        font-size: 0.9rem;
+      font-size: 1.4rem;
     }
-    
-    .menu-toggle {
-        width: 45px;
-        height: 45px;
-        right: 15px;
-        top: 15px;
-    }
-    
-    .menu-icon .line {
-        width: 20px;
-    }
-    
+  
     .menu-item {
-        font-size: 1.2rem;
+      font-size: 1.8rem;
     }
-    
+  
     .map-title {
-        font-size: 1.8rem;
+      font-size: 2.8rem;
     }
-    
-    .mapouter {
-        height: 250px;
-    }
-    
-    .directions-btn {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-    }
-    
-    .whatsapp-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 15px;
-        font-size: 14px;
-        /* Ensure it stays on top */
-        z-index: 9999;
+  
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 30px;
     }
 }
-/* Landscape orientation */
+
+/* Mobile Large (480px to 767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .hero-content {
+      width: 95%;
+      padding: 0 20px;
+    }
+  
+    .animate-title {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+  
+    .animate-subtitle {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+  
+    .location-tagline {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+  
+    .menu-toggle {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .whatsapp-btn {
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  
+    .map-container {
+      padding: 60px 0;
+    }
+  
+    .mapouter {
+      height: 350px;
+    }
+}
+
+/* Mobile Small (320px to 479px) */
+@media screen and (max-width: 479px) {
+    .hero-content {
+      width: 100%;
+      padding: 0 15px;
+    }
+  
+    .animate-title {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+  
+    .animate-subtitle {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+  
+    .location-tagline {
+      font-size: 1rem;
+      margin-top: 15px;
+    }
+  
+    .menu-toggle {
+      width: 40px;
+      height: 40px;
+      right: 10px;
+      top: 10px;
+    }
+  
+    .menu-item {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+  
+    .whatsapp-btn {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      bottom: 10px;
+      right: 10px;
+    }
+  
+    .map-title {
+      font-size: 1.8rem;
+    }
+  
+    .mapouter {
+      height: 280px;
+    }
+  
+    .info-card {
+      padding: 12px;
+      font-size: 0.85rem;
+    }
+  
+    .directions-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0 15px;
+    }
+  
+    .footer-section h3 {
+      font-size: 1.1rem;
+    }
+  
+    .social-links a {
+      font-size: 1.3rem;
+    }
+  
+    .developer-credit {
+      font-size: 0.8rem;
+    }
+}
+
+/* Landscape Mode Fixes */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     .hero-container {
-        height: auto;
-        min-height: 100vh;
-        padding: 50px 0;
+      min-height: 120vh;
     }
-    
-    .menu-items {
-        gap: 15px;
+  
+    .menu-overlay .menu-items {
+      padding: 20px 0;
+      gap: 15px;
     }
-    
+  
     .menu-item {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
+    }
+  
+    .map-container {
+      padding: 40px 0;
     }
 }
-
-/* Large screens */
-@media screen and (min-width: 1400px) {
-    .hero-content {
-        max-width: 1400px;
-    }
-    
-    .map-content {
-        max-width: 1400px;
-    }
-}
-
 .site-footer {
     background: linear-gradient(45deg, #000 0%, #1a1a1a 100%);
     color: #fff;
