@@ -39,6 +39,8 @@ body {
     text-align: center;
     width: 80%;
     max-width: 1200px;
+    transform-style: preserve-3d;
+    perspective: 2000px;
 }
 
 .animate-title {
@@ -46,7 +48,7 @@ body {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateZ(100px);
     animation: fadeInUp 1.5s forwards;
     letter-spacing: 4px;
 }
@@ -56,9 +58,22 @@ body {
     color: #fff;
     margin-top: 20px;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateZ(50px);
     animation: fadeInUp 1.5s forwards 0.5s;
     letter-spacing: 2px;
+}
+
+.location-tagline {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: #fff;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s forwards 1s;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-btn {
@@ -81,56 +96,6 @@ body {
     box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.parallax-section {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: transform 0.3s ease-out;
-}
-
-.visible {
-    opacity: 1;
-}
-
-@media screen and (min-width: 1024px) {
-    .hero-content {
-        padding: 0 40px;
-    }
-    
-    .whatsapp-btn {
-        font-size: 1.4rem;
-        padding: 20px 35px;
-    }
-}
-
-/* Add this to your existing CSS */
-.location-tagline {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    color: #fff;
-    margin-top: 30px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1.5s forwards 1s;
-    letter-spacing: 3px;
-    font-style: italic;
-    text-transform: uppercase;
-    background: linear-gradient(to right, #ffffff, #e6e6e6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Add these styles to your existing CSS */
 .navbar {
     position: fixed;
     top: 0;
@@ -184,6 +149,109 @@ body {
     transition: 0.3s ease;
 }
 
+.map-container {
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(45deg, #000 0%, #1a1a1a 100%);
+    overflow: hidden;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;}
+
+.map-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.map-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.mapouter {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.3s, mapFloat 6s ease-in-out infinite;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 100%;
+}
+
+.gmap_iframe {
+    width: 100% !important;
+    height: 100% !important;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-info {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    color: white;
+    max-width: 600px;
+}
+
+.info-card i {
+    font-size: 24px;
+    color: #25D366;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mapFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 @media screen and (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -205,4 +273,23 @@ body {
     .hamburger {
         display: flex;
     }
+}
+
+.directions-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.directions-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
