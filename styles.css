@@ -7,23 +7,23 @@
 body {
     background: #000;
     font-family: 'Arial', sans-serif;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
-
 .hero-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-}
+    background-attachment: fixed;}
 
 .overlay {
     position: absolute;
@@ -493,8 +493,16 @@ body {
         padding: 12px 25px;
         font-size: 0.9rem;
     }
+    
+    .whatsapp-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 15px;
+        font-size: 14px;
+        /* Ensure it stays on top */
+        z-index: 9999;
+    }
 }
-
 /* Landscape orientation */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     .hero-container {
