@@ -405,3 +405,120 @@ body {
 .menu-overlay.active .menu-item:nth-child(4) { transition-delay: 0.4s; }
 .menu-overlay.active .menu-item:nth-child(5) { transition-delay: 0.5s; }
 .menu-overlay.active .menu-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Base responsive styles */
+.hero-content {
+    width: 90%;
+    padding: 20px;
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 768px) {
+    .animate-title {
+        font-size: 2.5rem;
+    }
+    
+    .animate-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .location-tagline {
+        font-size: 1rem;
+    }
+    
+    .menu-item {
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .map-container {
+        padding: 50px 0;
+    }
+    
+    .mapouter {
+        height: 300px;
+    }
+    
+    .info-card {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+    .animate-title {
+        font-size: 2rem;
+    }
+    
+    .animate-subtitle {
+        font-size: 1rem;
+    }
+    
+    .location-tagline {
+        font-size: 0.9rem;
+    }
+    
+    .menu-toggle {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+        top: 15px;
+    }
+    
+    .menu-icon .line {
+        width: 20px;
+    }
+    
+    .menu-item {
+        font-size: 1.2rem;
+    }
+    
+    .map-title {
+        font-size: 1.8rem;
+    }
+    
+    .mapouter {
+        height: 250px;
+    }
+    
+    .directions-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero-container {
+        height: auto;
+        min-height: 100vh;
+        padding: 50px 0;
+    }
+    
+    .menu-items {
+        gap: 15px;
+    }
+    
+    .menu-item {
+        font-size: 1.2rem;
+    }
+}
+
+/* Large screens */
+@media screen and (min-width: 1400px) {
+    .hero-content {
+        max-width: 1400px;
+    }
+    
+    .map-content {
+        max-width: 1400px;
+    }
+}

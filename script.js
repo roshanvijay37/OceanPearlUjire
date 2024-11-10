@@ -10,14 +10,16 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 function initializeParallax(element) {
-    window.addEventListener('mousemove', (e) => {
-        const { clientX, clientY } = e;
-        const xAxis = (window.innerWidth / 2 - clientX) / 25;
-        const yAxis = (window.innerHeight / 2 - clientY) / 25;
-        element.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
+    // Only enable parallax effect on non-touch devices
+    if (window.matchMedia("(hover: hover)").matches) {
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const xAxis = (window.innerWidth / 2 - clientX) / 25;
+            const yAxis = (window.innerHeight / 2 - clientY) / 25;
+            element.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+    }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     // Parallax initialization
     const parallaxElements = document.querySelectorAll('.parallax-section');
